@@ -3,17 +3,17 @@ package com.example.restservice;
 public class SshExec {
 
     private final String host;
-//    private final String username
+    private final String username;
 
 
-    public SshExec(String host) {
+    public SshExec(String host, String username) {
         this.host = host;
-//        this.username = username;
+        this.username = username;
     }
 
-//    public String getUsername(){
-//        return username;
-//    }
+    public String getUsername(){
+        return username;
+    }
     public String getHost(){
         return host;
     }

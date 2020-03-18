@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SshExecController {
-    private static final String template = "Hello, %s";
+    private static final String hostnameTemplate = "This is host: %s";
+    private static final String usernameTemplate = "This is user: %s";
 
     @GetMapping("/api/sshexec")
-    public SshExec sshExec(@RequestParam(value="host", defaultValue="some host") String host) {
-        return new SshExec (String.format(template, host));
+    public SshExec sshExec(@RequestParam(value="hostname", defaultValue="some host") String hostname, @RequestParam(value="username", defaultValue="some user") String username) {
+        return new SshExec (String.format(hostnameTemplate, hostname), String.format(usernameTemplate, username));
     }
 }
 
