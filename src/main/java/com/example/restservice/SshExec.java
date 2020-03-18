@@ -18,6 +18,7 @@ public class SshExec {
     private final String username;
 
 
+
     public SshExec(String host, String username) {
         this.host = host;
         this.username = username;
@@ -31,11 +32,8 @@ public class SshExec {
         return host;
     }
 
-    public void main(String[] args) {
-
-        String newhost = host;
-        System.out.println(newhost);
-        
+    public String executeOnDevice(String hostName, String userName) {
+        return "This method has been executed";
     }
 }
 

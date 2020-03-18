@@ -1,6 +1,5 @@
 package com.example.restservice;
 
-
 import jdk.jfr.Registered;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,8 +12,13 @@ public class SshExecController {
     private static final String usernameTemplate = "This is user: %s";
 
     @GetMapping("/api/sshexec")
-    public SshExec sshExec(@RequestParam(value="hostname", defaultValue="some host") String hostname, @RequestParam(value="username", defaultValue="some user") String username) {
-        return new SshExec (String.format(hostnameTemplate, hostname), String.format(usernameTemplate, username));
+    public SshExec getSshDetail(@RequestParam(value="hostname", defaultValue="some host") String hostName, @RequestParam(value="username", defaultValue="some user") String userName)
+    {
+        SshExec objSshExec = new SshExec("", "");
+
+        //objSshExec.executeOnDevice(hostName, userName);
+
+        return new SshExec (String.format(objSshExec.executeOnDevice(hostName, userName)), "");
     }
 }
 
