@@ -52,6 +52,30 @@ public class SshExec {
         return hostName;
     }
 
+    public String getPassword(){
+        return password;
+    }
+
+    public String getSshPort(){
+        return sshPort;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public String getStringToFind() {
+        return stringToFind;
+    }
+
+    public String getIfStringFound() {
+        return ifStringFound;
+    }
+
+    public String getIfStringNotFound() {
+        return ifStringNotFound;
+    }
+
     public String executeOnDevice(String hostName,
                                   String userName,
                                   String password,
@@ -80,7 +104,6 @@ public class SshExec {
 //        //Set true or false if you want to see command execution output display
 //        System.out.println(hostName+userName+password+sshPort+command+stringToFind+ifStringFound+ifStringNotFound);
 
-//        sbx-nxos-mgmt.cisco.comadmin8181show running-config eigrpauthentication mode md5FoundNotFound
 
         try {
             Integer portNumber = Integer.parseInt(sshPort);
@@ -159,24 +182,3 @@ public class SshExec {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-//    public SshExec(String command, String host, String portNumber, String user, String password, String stringToFind, String ifString, String ifNotString, boolean showCmdOutput, boolean successFound) {
-
-
-//    private final String portNumber;
-//    private final String user;
-//    private final String password;
-//    private final String stringToFind;
-//    private final String ifString;
-//    private final String ifNotString;
-//    private final boolean showCmdOutput;
-//    private final boolean successFound;
